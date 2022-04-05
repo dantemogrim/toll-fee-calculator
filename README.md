@@ -2,14 +2,11 @@
 
 # toll-fee-calculator
 
-A
-[calculator for vehicle toll fees](https://github.com/layertencollective/toll-fee-calculator)
-written in TypeScript.
+A [calculator for vehicle toll fees](https://github.com/layertencollective/toll-fee-calculator) written in TypeScript.
 
 ## The Assignment
 
-> "Our city has decided to implement toll fees in order to reduce traffic
-> congestion during rush hours."
+> "Our city has decided to implement toll fees in order to reduce traffic congestion during rush hours."
 
 This is the current draft of requirements:
 

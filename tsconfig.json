@@ -1,22 +1,24 @@
 {
   "compilerOptions": {
-    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "lib": ["es6"],
+    // "isolatedModules": true,
+    "lib": ["dom", "esnext"],
     "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
+    // "moduleResolution": "node",
+    "noEmit": true,
     "outDir": "build",
-    "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
+    // "rootDir": "public",
+    // "skipLibCheck": true,
     "strict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "target": "ES2020",
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node"]
+    //  "strictFunctionTypes": true,
+    //  "strictNullChecks": true,
+    "target": "esnext",
+    "noUnusedLocals": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+    //  "typeRoots": ["./node_modules/@types"],
+    //  "types": ["node"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.spec.ts"]
+  // "include": ["public/**/*"],
+  "exclude": ["public/**/*.spec.ts", "node_modules", ".cache"]
 }
