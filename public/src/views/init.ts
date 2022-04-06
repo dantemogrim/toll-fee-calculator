@@ -1,8 +1,6 @@
-import ora from 'ora';
 import prompts from 'prompts';
 
 const init = async () => {
-  ora('starting...').start();
   const response = await prompts({
     type: 'number',
     name: 'value',

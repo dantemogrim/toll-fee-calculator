@@ -1,26 +1,28 @@
 //import { define, random, sequence } from 'cooky-cutter';
-// import ora from 'ora';
+import { Car } from './src/classes/Vehicle';
+import Time from './src/classes/Time';
+import Calendar from './src/classes/Calendar';
 
-import ora from 'ora';
+const currentTime = new Time('', '', '');
+const currentDate = new Calendar('', '', '', '', '');
+const time = new Date().toString();
+
+console.log(time);
+
 import prompts from 'prompts';
 
-(async () => {
-  const response = await prompts({
-    type: 'number',
-    name: 'value',
-    message: 'How old are you?',
-    validate: (value) => (value < 18 ? `Nightclub is 18+ only` : true),
-  });
+console.log("Welcome to Gothenburg, Sweden's Toll Fee Calculator!\n");
+console.log(`The time is ${currentTime.hour}h ${currentTime.minute}min\n`);
+console.log(`The current date is ${currentDate.fullDate}\n`);
+console.log(`The current fee is at: SEK`);
 
-  console.log(response); // => { value: 24 }
-})();
-
-// const spinner = ora('Loading unicorns').start();
-
-// setTimeout(() => {
-//   spinner.color = 'yellow';
-//   spinner.text = 'Loading rainbows';
-// }, 1000);
+// (async () => {
+//   const response = await prompts({
+//     type: 'number',
+//     name: 'value',
+//     message: 'How old are you?',
+//     validate: (value) => (value < 18 ? `Nightclub is 18+ only` : true),
+//   });
 
 // Is this weekday tollable?
 // Is this date tollable?
@@ -34,5 +36,3 @@ import prompts from 'prompts';
 // - $typeOfVehicle
 // - $date
 // - $time
-
-console.log('hello');

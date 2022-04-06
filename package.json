@@ -24,7 +24,6 @@
   "dependencies": {
     "@types/node": "^17.0.23",
     "nodemon": "^2.0.15",
-    "ora": "^6.1.0",
     "prompts": "^2.4.2",
     "ts-node": "^10.7.0"
   },
