@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     //  "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "node_modules/@types", "@types/node"]
+    "types": ["node", "@types/node"]
   },
   // "include": ["public/**/*"],
   "exclude": ["public/**/*.spec.ts", "node_modules", ".cache"]

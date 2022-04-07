@@ -1,13 +1,15 @@
 //import { define, random, sequence } from 'cooky-cutter';
-import { Car } from './src/classes/Vehicle';
-import Time from './src/classes/Time';
-import Calendar from './src/classes/Calendar';
+import { Car } from './src/models/Vehicle';
+import Time from './src/models/Time';
+import Calendar from './src/models/Calendar';
 
 const currentTime = new Time('', '', '');
 const currentDate = new Calendar('', '', '', '', '');
 const time = new Date().toString();
+const theCar = new Car();
 
 console.log(time);
+console.log(theCar);
 
 import prompts from 'prompts';
 
