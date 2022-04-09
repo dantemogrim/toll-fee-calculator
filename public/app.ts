@@ -1,22 +1,34 @@
-//import { define, random, sequence } from 'cooky-cutter';
-import { Car } from './src/models/Vehicle';
-import Time from './src/models/Time';
-import Calendar from './src/models/Calendar';
-
-const currentTime = new Time('', '', '');
-const currentDate = new Calendar('', '', '', '', '');
-const time = new Date().toString();
-const theCar = new Car();
-
-console.log(time);
-console.log(theCar);
-
 import prompts from 'prompts';
+//import { define, random, sequence } from 'cooky-cutter';
 
-console.log("Welcome to Gothenburg, Sweden's Toll Fee Calculator!\n");
-console.log(`The time is ${currentTime.hour}h ${currentTime.minute}min\n`);
-console.log(`The current date is ${currentDate.fullDate}\n`);
-console.log(`The current fee is at: SEK`);
+// Components
+import { military } from './src/factory/vehicles/military';
+import { car } from './src/factory/vehicles/car';
+
+// Models
+import Time from './src/models/times/Time';
+
+import { Tractor } from './src/models/vehicles/Vehicle';
+
+import { Month, Day, Year } from './src/models/dates/Calendar';
+import { Date } from './src/models/dates/Date';
+
+const date = new Date();
+const day = new Day();
+const month = new Month();
+const year = new Year();
+
+const tractor = new Tractor();
+console.log(day, date, month, year);
+
+// Date
+
+// console.log("Welcome to Gothenburg, Sweden's Toll Fee Calculator!\n");
+// console.log(
+//   `The time is ${currentTime.hour} hours and ${currentTime.minute} minutes.\n`
+// );
+// console.log(`The current date is ${currentDate.fullDate}\n`);
+// console.log(`The current fee is at: SEK`);
 
 // (async () => {
 //   const response = await prompts({

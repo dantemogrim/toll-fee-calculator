@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
+    "target": "es2017",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     // "isolatedModules": true,
-    "lib": ["dom", "esnext"],
     "module": "commonjs",
     // "moduleResolution": "node",
     "noEmit": true,
@@ -12,13 +19,17 @@
     "strict": true,
     //  "strictFunctionTypes": true,
     //  "strictNullChecks": true,
-    "target": "esnext",
     "noUnusedLocals": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     //  "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "@types/node"]
+    "types": ["node", "@types/node", "jest"]
   },
-  // "include": ["public/**/*"],
-  "exclude": ["public/**/*.spec.ts", "node_modules", ".cache"]
+  "exclude": [
+    "**/*.spec.ts",
+    "node_modules",
+    ".cache",
+    "**/*.js",
+    "**/*.test.js"
+  ]
 }

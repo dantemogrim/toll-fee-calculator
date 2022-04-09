@@ -1,6 +1,5 @@
 {
-  "watch": ["public"],
+  "watch": ["public", "public/services", "public/services/calendarHandler.ts"],
   "ext": ".ts,.js",
-  "ignore": [],
-  "exec": "ts-node ./public/app.ts"
+  "ignore": [".git", "node_modules", "build"]
 }
