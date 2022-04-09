@@ -5,9 +5,3 @@ export class Vehicle {
     this.tollable = tollable;
   }
 }
-
-export class Tractor extends Vehicle {
-  constructor() {
-    super(false);
-  }
-}

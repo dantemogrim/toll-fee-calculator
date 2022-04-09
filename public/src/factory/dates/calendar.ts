@@ -5,7 +5,4 @@ swedishDate.setMinutes(swedishDate.getMinutes() + utcOffsetInMinutes);
 const swedishOffset = 2 * 60;
 swedishDate.setMinutes(swedishDate.getMinutes() + swedishOffset);
 
-const currentHour = swedishDate.getHours();
-const currentMinute = swedishDate.getMinutes();
-
-export { currentHour, currentMinute, swedishDate };
+export { swedishDate };

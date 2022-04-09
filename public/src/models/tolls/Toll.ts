@@ -1,12 +1,8 @@
 export class Toll {
-  amount: number;
-  constructor(amount: number) {
-    this.amount = amount;
-  }
-}
-
-export class InitialToll extends Toll {
-  constructor() {
-    super(0);
+  initialAmount: number;
+  finalAmount: number;
+  constructor(initialAmount: number, finalAmount: number) {
+    this.initialAmount = initialAmount;
+    this.finalAmount = finalAmount;
   }
 }
