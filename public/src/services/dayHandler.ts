@@ -8,13 +8,13 @@ const tollable = () => {
   //
   if (value === 'Sat' || value === 'Sun') {
     console.log('Today is a toll free day!');
-    tollableDay = false;
+    //    tollableDay = false;
   } else {
-    tollableDay = true;
+    //   tollableDay = true;
     console.log('Today is a totally tollable day!');
   }
 
-  return tollableDay;
+  // return tollableDay;
 };
 
 tollable();
