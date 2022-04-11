@@ -16,6 +16,4 @@ const months = [
 ];
 
 const monthIndex = swedishDate.getMonth();
-const currentMonth = months[monthIndex];
-
-export { currentMonth };
+export const currentMonth = months[monthIndex];

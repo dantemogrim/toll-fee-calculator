@@ -1,5 +1,3 @@
 import { swedishDate } from './calendar';
 
-const currentDate = swedishDate.getDate();
-
-export { currentDate };
+export const currentDate = swedishDate.getDate();

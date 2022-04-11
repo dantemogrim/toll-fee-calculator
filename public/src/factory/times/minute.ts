@@ -1,5 +1,3 @@
 import { swedishDate } from '../dates/calendar';
 
-const currentMinute = swedishDate.getMinutes();
-
-export { currentMinute };
+export const currentMinute = swedishDate.getMinutes();
