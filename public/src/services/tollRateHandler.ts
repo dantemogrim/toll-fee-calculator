@@ -59,7 +59,7 @@ export const tollRateCalculation = (hour: number, minute: number) => {
   }
 
   // 18:30 - 05:59 = 0 SEK
-  if ((hour === 18 && minute >= 30) || hour < 6) {
+  if (hour >= 18 && minute >= 30) {
     tollRateMessage = '🛻  18:30 - 05:59 = 0 SEK';
     rate = 0;
   }

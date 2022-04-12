@@ -1,4 +1,12 @@
-import { Car } from './src/models/vehicles/Car';
+import {
+  car,
+  diplomat,
+  emergency,
+  foreign,
+  military,
+  motorbike,
+  tractor,
+} from './src/factory/vehicles/garage';
 import { currentDay } from './src/factory/dates/day';
 import { fullDate } from './src/factory/dates/fullDate';
 import { holidays } from './src/factory/dates/holidays';
@@ -7,6 +15,7 @@ import { Minute } from './src/models/times/Minute';
 import { tollableDay } from './src/services/dayHandler';
 import { tollRateCalculation } from './src/services/tollRateHandler';
 import { blue, cyan, white, yellow, green, italic } from 'kleur';
+import { Car } from './src/models/vehicles/Car';
 
 const hour = new Hour();
 const minute = new Minute();
@@ -44,7 +53,6 @@ if (isHoliday === false && isTollableDay === true) {
 
   toll = tollRate;
 
-  console.log(tollRate);
   console.log(tollRateMessage);
 } else {
   console.log(green().bold('🪙  Zero! Today is a toll free day.'));
@@ -52,20 +60,25 @@ if (isHoliday === false && isTollableDay === true) {
 
 // 4. Check for: Vehicle Type
 // Incoming Vehicle: Based off of Vehicle Class property "tollable"
-const car = new Car(true, 'HEJ-123', '12/Apr', '12/Apr');
-const tollable = car.tollable;
-// TODO Test for example "Tractor" here
 
-// const tollableVehicle = (tollable: boolean, tollRate: number) => {
-//   if (tollable === true) {
-//     console.log('⭐ The incoming vehicle is free to pass without charge.');
-//     tollRate = 0;
-//   }
+const vehicles = [
+  car,
+  diplomat,
+  emergency,
+  foreign,
+  military,
+  motorbike,
+  tractor,
+];
 
-//   return tollRate;
-// };
+for (const vehicle of vehicles) {
+  if (vehicle.tollable === false) {
+    toll = 0;
+  }
+}
 
-// tollableVehicle(tollable, tollRate);
+// TODO - Test Scene for different incoming vehicles
+const testCar = new Car(true, 'WWW-123', '', '');
 
 // 5 - Check if Cars "previousPassage" is set via registration plate number
 // 5.1 If not set - set to "mostRecentPassage" instead
@@ -74,5 +87,7 @@ const tollable = car.tollable;
 
 // TODO - Check for: Passages
 
+// Final Method/Handler - Takes in incoming Vehicle + Toll
+
 // Final Toll Fee
-console.log(yellow().bold(`FINAL TOLL = ` + toll));
+//console.log(yellow().bold(`FINAL TOLL = ` + toll));
