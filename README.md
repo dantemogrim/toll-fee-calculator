@@ -2,7 +2,7 @@
 
 # toll-fee-calculator
 
-A [calculator for vehicle toll fees](https://github.com/layertencollective/toll-fee-calculator) written in TypeScript.
+A CLI toll fee calculator written in TypeScript.
 
 ## The Assignment
 
@@ -20,7 +20,7 @@ This is the current draft of requirements:
       [Transportstyrelsen](https://transportstyrelsen.se/sv/vagtrafik/Trangselskatt/Trangselskatt-i-goteborg/Tider-och-belopp-i-Goteborg/)
       for details.
 
-## Guide
+## Instructions
 
 :clipboard: **Essential installations:**
 
@@ -30,8 +30,7 @@ This is the current draft of requirements:
   [FNM](https://github.com/Schniz/fnm).
 
 - Clone the repository and open it in your code editor.
-- Switch to the Node.js version mentioned in the `.nvmrc` by running `$ nvm use`
-  or `$ fnm use` from the root.
+- Switch to the Node.js version mentioned in the `.nvmrc` by running `$ nvm use` or `$ fnm use` from the root.
 - Run `$ npm i`.
 - Run `$ npm run dev` and visit the outputted port in your browser.
 

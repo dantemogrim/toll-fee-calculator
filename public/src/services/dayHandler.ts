@@ -1,22 +1,11 @@
-import { Day } from '../models/dates/Day';
+export const tollableDay = (day: string) => {
+  let tollability = true;
 
-const day = new Day();
-const value = day.value;
-let tollableDay: boolean;
-
-const tollable = () => {
-  //
-  if (value === 'Sat' || value === 'Sun') {
-    console.log('Today is a toll free day!');
-    //    tollableDay = false;
+  if (day == 'Sat' || day == 'Sun') {
+    tollability = false;
   } else {
-    //   tollableDay = true;
-    console.log('Today is a totally tollable day!');
+    tollability = true;
   }
 
-  // return tollableDay;
+  return { tollability };
 };
-
-tollable();
-
-export { tollableDay };
