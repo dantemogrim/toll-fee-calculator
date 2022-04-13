@@ -1,25 +1,21 @@
-import {
-  car,
-  diplomat,
-  emergency,
-  foreign,
-  military,
-  motorbike,
-  tractor,
-} from './src/factory/vehicles/garage';
 import { currentDay } from './src/factory/dates/day';
 import { fullDate } from './src/factory/dates/fullDate';
 import { holidays } from './src/factory/dates/holidays';
-import { Hour } from './src/models/times/Hour';
-import { Minute } from './src/models/times/Minute';
+import { Hour, Minute } from './src/models/Time';
 import { tollableDay } from './src/services/dayHandler';
 import { tollRateCalculation } from './src/services/tollRateHandler';
-import { blue, cyan, white, yellow, green, italic } from 'kleur';
-import { Car } from './src/models/vehicles/Car';
+import { white, green, italic } from 'kleur';
+import {
+  isVehicleTollable,
+  addLastSeenDate,
+  addLicensePlate,
+} from './src/services/vehicleHandler';
+import { Car, Tractor, Vehicle } from './src/models/Vehicle';
 
 const hour = new Hour();
 const minute = new Minute();
-let toll = 0;
+let initialToll = 0;
+// let finalToll = 0;
 
 console.log(white().bold().underline('Welcome to the Toll Fee Calculator!'));
 console.log(italic('🇸🇪  Currently in Gothenburg, Sweden:'));
@@ -33,13 +29,11 @@ const isTollableDay = tollableDay(currentDay).tollability;
 let isHoliday = false;
 holidays.some((element) => {
   if (fullDate.includes(element)) {
-    toll = 0;
+    initialToll = 0;
     return (isHoliday = true);
   }
   return (isHoliday = false);
 });
-
-console.log('📈 The toll range is at:');
 
 // 3. Validate holidays and weekends before calculating.
 if (isHoliday === false && isTollableDay === true) {
@@ -49,45 +43,51 @@ if (isHoliday === false && isTollableDay === true) {
     minute.value
   ).tollRateMessage;
 
-  const tollRate = tollRateCalculation(14, minute.value).rate;
+  const tollRate = tollRateCalculation(hour.value, minute.value).rate;
 
-  toll = tollRate;
+  initialToll = tollRate;
 
-  console.log(tollRateMessage);
+  // TODO - Fix message after 18
+  console.log('📈 The toll range is at: ' + initialToll + ' SEK');
 } else {
   console.log(green().bold('🪙  Zero! Today is a toll free day.'));
 }
 
 // 4. Check for: Vehicle Type
-// Incoming Vehicle: Based off of Vehicle Class property "tollable"
+// Incoming Test Vehicles:
+const testTractor = new Tractor();
+const testCar = new Car();
 
-const vehicles = [
-  car,
-  diplomat,
-  emergency,
-  foreign,
-  military,
-  motorbike,
-  tractor,
-];
+isVehicleTollable(testCar);
+isVehicleTollable(testTractor);
 
-for (const vehicle of vehicles) {
-  if (vehicle.tollable === false) {
-    toll = 0;
-  }
+if (!isVehicleTollable(testCar)) {
+  // console.log('No toll fee here. Free of charge.');
 }
 
-// TODO - Test Scene for different incoming vehicles
-const testCar = new Car(true, 'WWW-123', '', '');
+const doesVehicleExist = (Vehicle: object, todaysDate: string) => {
+  if ('lastSeen' in Vehicle) {
+    // console.log('Targeted vehicle found in previous records.');
+    // updateDate()
 
-// 5 - Check if Cars "previousPassage" is set via registration plate number
-// 5.1 If not set - set to "mostRecentPassage" instead
-// 5.2
-// 5.3 Compare previousPassage to "mostRecentPassage" dates - if same - Increase toll rate.
+    return Vehicle;
+  } else {
+    // console.log(
+    //   'No data found in records.\nSetting date and license plate number..'
+    // );
+    const datedVehicle = addLastSeenDate(Vehicle, todaysDate);
+    //console.log(datedVehicle);
+    const platedVehicle = addLicensePlate(Vehicle);
+    // addlicensePlate()
+    const merged = Object.assign({}, datedVehicle, platedVehicle);
+    return merged;
+  }
+};
 
-// TODO - Check for: Passages
+// console.log(doesVehicleExist(testCar, fullDate));
 
-// Final Method/Handler - Takes in incoming Vehicle + Toll
-
-// Final Toll Fee
-//console.log(yellow().bold(`FINAL TOLL = ` + toll));
+const updateDate = (Vehicle: object, todaysDate: string) => {
+  // Take lastSeen and place it in previouslySeen
+  // Place todays date in lastSeen
+  // return
+};

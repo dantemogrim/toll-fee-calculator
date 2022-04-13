@@ -29,10 +29,10 @@
     "ts-node": "^10.7.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.1.2",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
-    "cooky-cutter": "^1.5.4",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
