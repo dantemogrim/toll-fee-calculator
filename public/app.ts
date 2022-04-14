@@ -35,6 +35,7 @@ holidays.some((element) => {
   return (isHoliday = false);
 });
 
+console.log('📈 The toll range is at: ');
 // 3. Validate holidays and weekends before calculating.
 if (isHoliday === false && isTollableDay === true) {
   tollRateCalculation(hour.value, minute.value);
@@ -47,10 +48,9 @@ if (isHoliday === false && isTollableDay === true) {
 
   initialToll = tollRate;
 
-  // TODO - Fix message after 18
-  console.log('📈 The toll range is at: ' + initialToll + ' SEK');
+  console.log(tollRateMessage);
 } else {
-  console.log(green().bold('🪙  Zero! Today is a toll free day.'));
+  console.log(green().bold('👌  Zero! Today is a toll free day.'));
 }
 
 // 4. Check for: Vehicle Type
