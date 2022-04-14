@@ -8,6 +8,39 @@ export const isVehicleTollable = (Vehicle: object): boolean => {
   }
 };
 
+export const doesVehicleExist = (
+  incomingVehicle: object,
+  todaysDate: string
+) => {
+  if ('lastSeen' in incomingVehicle) {
+    console.log('Targeted vehicle found in previous records.');
+    return didPassToday(incomingVehicle, todaysDate);
+  } else {
+    console.log(
+      'No data found in records.\nSetting date and license plate number..'
+    );
+    const datedVehicle = addLastSeenDate(incomingVehicle, todaysDate);
+    const platedVehicle = addLicensePlate(incomingVehicle);
+    const datedAndPlatedVehicle = Object.assign(
+      {},
+      datedVehicle,
+      platedVehicle
+    );
+    return datedAndPlatedVehicle;
+  }
+};
+
+export const didPassToday = (
+  incomingVehicle: object,
+  todaysDate: string
+): boolean => {
+  if (Object.values(incomingVehicle).indexOf(todaysDate) > -1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 export const addLastSeenDate = (
   Vehicle: object,
   todaysDate: string
