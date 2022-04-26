@@ -2,20 +2,24 @@
 
 # Toll Fee Calculator
 
-A CLI toll fee calculator written in TypeScript.
+A CLI calculator for vehicle toll fees.
 
 ## Instructions
 
-:clipboard: **Essential installations:**
+1. Clone the repository and open it in your code editor.
+2. Switch to the Node.js version mentioned in the `.nvmrc` by running `$ fnm use` from the root.
+3. Run `$ npm i` followed by `$ npm run compile`.
+4. Run `$ npm run dev` and visit the application in your Command Line.
 
-- [Node.js](https://nodejs.org/en/)
-- [NPM](https://www.npmjs.com/)
-- A Node Version Manager like [FNM](https://github.com/Schniz/fnm).
+> 🚐 _Requires [Node.js](https://nodejs.org/en/), [NPM](https://www.npmjs.com/) and a Node Version Manager like [FNM](https://github.com/Schniz/fnm)._
 
-- Clone the repository and open it in your code editor.
-- Switch to the Node.js version mentioned in the `.nvmrc` by running `$ fnm use` from the root.
-- Run `$ npm i` followed by `$ npm run compile`.
-- Run `$ npm run dev` and visit the application in your Command Line.
+### Objectives
+
+- [x] Fees will differ between 9 SEK and 22 SEK, depending on the time of day.
+- [ ] The maximum fee for one day is 60 SEK.
+- [ ] Only the highest fee should be charged for multiple passages within a 60 minute period.
+- [x] Some vehicle types are fee free.
+- [x] Fee free days are; Saturdays, Sundays, holidays and day before holidays and the whole month of July. See [Transportstyrelsen](https://transportstyrelsen.se/sv/vagtrafik/trangselskatt/trangselskatt-i-goteborg/tider-och-belopp-i-goteborg/) for details.
 
 ### Creator
 

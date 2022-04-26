@@ -1,8 +1,9 @@
-import { currentDate } from '../factory/dates/date';
-import { currentDay } from '../factory/dates/day';
-import { currentMonth } from '../factory/dates/month';
-import { currentYear } from '../factory/dates/year';
-
+import {
+  currentDate,
+  currentDay,
+  currentMonth,
+  currentYear,
+} from '../services/getDate';
 export class Calendar {
   value: string | number;
   constructor(value: string | number) {

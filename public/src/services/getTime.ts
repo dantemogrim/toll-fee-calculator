@@ -1,4 +1,4 @@
-import { swedishDate } from './dates/calendar';
+import { swedishDate } from './getDate';
 
 export const currentHour = swedishDate.getHours();
 

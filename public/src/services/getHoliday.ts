@@ -1,9 +1,11 @@
-export const holidays = [
+import { fullDate } from './getDate';
+
+const holidays = [
   '31/Dec',
   '1/Jan',
   '5/Jan',
   '6/Jan',
-  // '14/Apr',
+  '14/Apr',
   '15/Apr',
   '16/Apr',
   '17/Apr',
@@ -23,3 +25,11 @@ export const holidays = [
   '25/Dec',
   '26/Dec',
 ];
+
+export let isHoliday = false;
+holidays.some((element) => {
+  if (fullDate.includes(element)) {
+    return (isHoliday = true);
+  }
+  return (isHoliday = false);
+});

@@ -1,4 +1,4 @@
-import { currentHour, currentMinute } from '../factory/time';
+import { currentHour, currentMinute } from '../services/getTime';
 
 export default class Time {
   value: number;
