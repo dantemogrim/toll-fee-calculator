@@ -3,7 +3,7 @@ import {
   currentDay,
   currentMonth,
   currentYear,
-} from '../services/getDate';
+} from '../functions/getDate';
 export class Calendar {
   value: string | number;
   constructor(value: string | number) {

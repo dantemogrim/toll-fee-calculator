@@ -1,11 +1,11 @@
 import { faker } from '@faker-js/faker';
-import { italic } from 'kleur';
-import { calcNewVehicle } from './getReceipt';
+import { italic, magenta } from 'kleur';
+import { receiptNewVehicle } from './getReceipt';
 
 export const addLastSeenDate = (incomingVehicle: object, fullDate: string) => {
   const addedDate = { lastSeen: fullDate };
   const datedVehicle = Object.assign({}, incomingVehicle, addedDate);
-  console.log(italic('Registering passage date..'));
+  console.log(magenta().italic('- Register passage date..'));
   addLicensePlate(datedVehicle);
 };
 
@@ -24,6 +24,6 @@ export const addLicensePlate = (incomingVehicle: object) => {
 
   const addedPlate = { licensePlate: randomLicensePlate };
   const datedPlatedVehicle = Object.assign({}, incomingVehicle, addedPlate);
-  console.log(italic('Registering license plate..'));
-  calcNewVehicle(datedPlatedVehicle);
+  console.log(magenta().italic('- Register license plate..'));
+  receiptNewVehicle(datedPlatedVehicle);
 };

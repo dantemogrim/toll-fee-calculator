@@ -1,4 +1,4 @@
-import { currentHour, currentMinute } from '../services/getTime';
+import { currentHour, currentMinute } from '../functions/getTime';
 
 export default class Time {
   value: number;

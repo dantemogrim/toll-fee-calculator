@@ -1,4 +1,4 @@
-export const tollRate = (hour: number, minute: number) => {
+export const getTollRate = (hour: number, minute: number) => {
   let tollRateMessage = '';
   let rate = 0;
 
@@ -32,18 +32,16 @@ export const tollRate = (hour: number, minute: number) => {
     rate = 9;
   }
 
-  // 15:30 - 16:59 = 22 SEK
-  if (hour >= 15 && minute >= 30) {
-    if (hour <= 16) {
-      tollRateMessage = '🚦 15:30 - 16:59 = 22 SEK';
-      rate = 22;
-    }
-  }
-
   // 15:00 - 15:29 = 16 SEK
   if (hour === 15 && minute <= 29) {
     tollRateMessage = '🚦 15:00 - 15:29 = 16 SEK';
     rate = 16;
+  }
+
+  // 15:30 - 16:59 = 22 SEK
+  if ((hour >= 15 && minute >= 30) || hour === 16) {
+    tollRateMessage = '🚦 15:30 - 16:59 = 22 SEK';
+    rate = 22;
   }
 
   // 17:00 - 17:59 = 16 SEK
